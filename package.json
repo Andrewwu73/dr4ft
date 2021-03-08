@@ -8,6 +8,9 @@
   },
   "license": "MIT",
   "author": "Dr4fters Team <zach@dr4ft.info>",
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "contributors": [
     {
       "name": "Zach Halpern",
@@ -107,8 +110,5 @@
     "sass-loader": "^10.1.1",
     "style-loader": "1.2.1",
     "webpack-cli": "3.3.12"
-  },
-  "engines": {
-    "node": "12.16.3"
   }
 }

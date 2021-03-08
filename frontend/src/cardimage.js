@@ -41,6 +41,7 @@ export const getFallbackSrc = ({setCode, number}) => {
   }
 
   const url = getScryfallImage(setCode, number);
+  //const url = "https://joey-custom-cube.s3.amazonaws.com/Wrenching+Darkness.png"
   return ev => {
     if (url !== ev.target.src) {
       ev.target.src = url;
@@ -52,8 +53,10 @@ export const getFallbackSrc = ({setCode, number}) => {
  * @param {Card} card
  * @returns {string} the image url to display
  */
-export const getCardSrc = ({identifiers, url, setCode, number, isBack}) => (
-  identifiers && identifiers.scryfallId !== ""
-    ? `${getScryfallImageWithLang(setCode, number)}${isBack ? "&face=back" : ""}`
-    : url
-);
+export const getCardSrc = ({identifiers, url, setCode, number, isBack}) => {
+  //console.log(url);
+  return url;
+  //return identifiers && identifiers.scryfallId !== ""
+  //  ? `${getScryfallImageWithLang(setCode, number)}${isBack ? "&face=back" : ""}`
+  // : url
+};

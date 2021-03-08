@@ -87,8 +87,8 @@ const CardBaseImage = ({ mouseEntered, url, foil, flippedIsBack, flippedNumber, 
       onError={getFallbackSrc({ setCode, number })}
       src={
         !mouseEntered
-          ? getCardSrc({ identifiers, setCode, url, number })
-          : getCardSrc({ identifiers, setCode, url, number: flippedNumber, isBack: flippedIsBack })
+        ? getCardSrc({ identifiers, setCode, url, number })
+        : getCardSrc({ identifiers, setCode, url, number: flippedNumber, isBack: flippedIsBack })
       }
     />
   </div>

@@ -326,7 +326,7 @@ module.exports = class Game extends Room {
       }
     });
 
-    saveDraftStats(this.id, draftStats);
+    //saveDraftStats(this.id, draftStats);
   }
 
   end() {
