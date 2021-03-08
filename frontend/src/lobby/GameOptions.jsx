@@ -6,7 +6,8 @@ import App from "../app";
 import Checkbox from "../components/Checkbox";
 import Select from "../components/Select";
 
-import SelectSet from "./SelectSet";
+import Set from "./Set";
+import SetReplicated from "./SetReplicated";
 import CubeList from "./CubeList";
 
 const GameOptions = () => {
@@ -77,18 +78,7 @@ Regular.propTypes = {
 };
 
 const Sets = ({sets, type}) => (
-  sets.map((set, i) => {
-    return (
-      <SelectSet
-        value={App.state[type][i]}
-        key={i}
-        onChange={setCode => {
-          App.state[type][i] = setCode;
-          App.save(type, App.state[type]);
-        }}
-      />
-    )
-  })
+  sets.map((set, i) => <Set type={type} selectedSet={set} index={i} key={i} />)
 );
 
 const Decadent = ({sets, type, picksPerPack}) => (
@@ -101,16 +91,7 @@ const Decadent = ({sets, type, picksPerPack}) => (
         opts={_.seq(60, 36)} />
     </div>
     <div>
-      <SelectSet
-        value={App.state[type][0]}
-        onChange={setCode => {
-          const sets = App.state[type];
-          for (let i = 0; i < sets.length; i++) {
-            sets[i] = setCode;
-          }
-          App.save(type, App.state[type]);
-        }}
-      />
+      <SetReplicated type={type} selectedSet={sets[0]} />
     </div>
     <PicksPerPacks picksPerPack={picksPerPack} />
   </Fragment>
